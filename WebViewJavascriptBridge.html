@@ -1,95 +1,208 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.0.16 (451862)"/><meta name="author" content="jinkai"/><meta name="created" content="2015-08-11 08:52:39 +0000"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2015-08-12 09:49:14 +0000"/><title>WebViewJavascriptBridge</title></head><body>
-<div><span style="font-size: 18px;"><b>1、对外接口</b></span></div>
-<div><br/></div>
-<table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: none; table-layout: fixed;width:95.22342064714945%;">
-<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
-<td width="213" valign="top" style="border:solid windowtext 1.0pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;width:50.080906148867314%;">
-<div><span style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">初始化</span><span lang="EN-US" xml:lang="EN-US">OC</span></div>
-</td>
-<td width="213" valign="top" style="border:solid windowtext 1.0pt; border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt: solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;width:49.83818770226537%;">
-<div><span style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">初始化</span><span lang="EN-US" xml:lang="EN-US">JS</span></div>
-</td>
-</tr>
-<tr style="mso-yfti-irow:1">
-<td width="213" valign="top" style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">[WebViewJavascriptBridge bridgeForWebView:(UIWebView/WebView*)webview handler:(WVJBHandler)handler]</span></b></div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: &quot;Helvetica Neue&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-bidi-font-family: &quot;Times New Roman&quot;;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US"> </span></b></div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">[WebViewJavascriptBridge bridgeForWebView:(UIWebView/WebView*)webview webViewDelegate:(UIWebViewDelegate*)webViewDelegate handler:(WVJBHandler)handler]</span></b></div>
-<div><span lang="EN-US" xml:lang="EN-US"> </span></div>
-</td>
-<td width="213" valign="top" style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">document.addEventListener('WebViewJavascriptBridgeReady', function onBridgeReady(event) { ... }, false)</span></b></div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: &quot;Helvetica Neue&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-bidi-font-family: &quot;Times New Roman&quot;;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US"> </span></b></div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">bridge.init(function messageHandler(data, response) { ... })</span></b></div>
-<div><span lang="EN-US" xml:lang="EN-US"> </span></div>
-</td>
-</tr>
-<tr style="mso-yfti-irow:2">
-<td width="213" valign="top" style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
-<div><span style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">OC发送消息</span><span lang="EN-US" xml:lang="EN-US">to JS</span></div>
-</td>
-<td width="213" valign="top" style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
-<div><span style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">JS发送消息</span><span lang="EN-US" xml:lang="EN-US">to OC</span></div>
-</td>
-</tr>
-<tr style="mso-yfti-irow:3">
-<td width="213" valign="top" style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">[bridge send:(id)data]</span></b></div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">[bridge send:(id)data responseCallback:(WVJBResponseCallback)responseCallback]</span></b></span></div>
-<div><span lang="EN-US" xml:lang="EN-US"> </span></div>
-</td>
-<td width="213" valign="top" style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">bridge.send("Hi there!")</span></b></div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">bridge.send({ Foo:"Bar" })</span></b></div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">bridge.send(data, function responseCallback(responseData) { ... })</span></b></span></div>
-<div><span lang="EN-US" xml:lang="EN-US"> </span></div>
-</td>
-</tr>
-<tr style="mso-yfti-irow:4">
-<td width="213" valign="top" style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
-<div><span style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">OC注册事件（先）</span></div>
-</td>
-<td width="213" valign="top" style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
-<div><span style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">JS调用事件（后）</span></div>
-</td>
-</tr>
-<tr style="mso-yfti-irow:5">
-<td width="213" valign="top" style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">[bridge registerHandler:(NSString*)handlerName handler:(WVJBHandler)handler]</span></b></div>
-<div><span lang="EN-US" xml:lang="EN-US"> </span></div>
-</td>
-<td width="213" valign="top" style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
-<div align="left" style="text-align:left;mso-pagination:widow-orphan"><span lang="EN-US" style="font-size:10.0pt;font-family:Consolas;mso-fareast-font-family: &quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333; mso-font-kerning:0pt" xml:lang="EN-US">WebViewJavascriptBridge.callHandler("handlerName")</span></div>
-<div><span lang="EN-US" xml:lang="EN-US"> </span></div>
-</td>
-</tr>
-<tr style="mso-yfti-irow:6">
-<td width="213" valign="top" style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
-<div><span style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">OC调用事件（后）</span></div>
-</td>
-<td width="213" valign="top" style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
-<div><span style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">JS注册事件（先）</span></div>
-</td>
-</tr>
-<tr style="mso-yfti-irow:7;mso-yfti-lastrow:yes">
-<td width="213" valign="top" style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">[bridge callHandler:(NSString*)handlerName data:(id)data]</span></b></div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">[bridge callHandler:(NSString*)handlerName data:(id)data responseCallback:(WVJBResponseCallback)callback]</span></b></div>
-<div><span lang="EN-US" xml:lang="EN-US"> </span></div>
-</td>
-<td width="213" valign="top" style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">bridge.registerHandler("handlerName", function(responseData) { ... })</span></b></div>
-<div><span lang="EN-US" xml:lang="EN-US"> </span></div>
-</td>
-</tr>
-</table>
-<div><br/></div>
-<div><b>三类API接口用于OC与JS之间交互</b>：初始化接口；发送消息接口，并且可以添加发送消息完成的回调函数；事件注册和调用接口，需要先在一端注册事件，另一端可以根据事件名称调用函数</div>
-<div><br/></div>
-<div>除了上述提到的外部方法：还有两个方法十分重要，<span style="font-size: 18px;"><b><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">JS部分最重要的内部方法： <b><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Menlo;">_handleMessageFromObjC；OC部分重要的内部方法：</span> <span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Menlo;"><b>flushMessageQueue</b></span></b></span></b></span></div>
-<div><span style="font-size: 13px;"><span style="font-family: Menlo;"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></span></span></div>
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>Jinkai.GitHub.com by kingnight</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+</head>
+<body>
+<section class="page-header">
+    <h1 class="project-name">WebViewJavascriptBridge源码分析</h1>
+
+    <h2 class="project-tagline">Webview</h2> <h2 class="project-tagline">Javascript</h2>
+    <a href="https://github.com/marcuswestin/WebViewJavascriptBridge" class="btn">项目GitHub地址</a>
+</section>
+
+<section class="main-content">
+<div>
+    <div><span style="font-size: 18px;"><b>1、对外接口</b></span></div>
+    <div><br/></div>
+    <table border="1" cellspacing="0" cellpadding="0"
+           style="border-collapse: collapse; border: none; table-layout: fixed;width:95.22342064714945%;">
+        <tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+            <td width="213" valign="top"
+                style="border:solid windowtext 1.0pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;width:50.080906148867314%;">
+                <div><span
+                        style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">初始化</span><span
+                        lang="EN-US" xml:lang="EN-US">OC</span></div>
+            </td>
+            <td width="213" valign="top"
+                style="border:solid windowtext 1.0pt; border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt: solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;width:49.83818770226537%;">
+                <div><span
+                        style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">初始化</span><span
+                        lang="EN-US" xml:lang="EN-US">JS</span></div>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:1">
+            <td width="213" valign="top"
+                style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US">[WebViewJavascriptBridge bridgeForWebView:(UIWebView/WebView*)webview handler:(WVJBHandler)handler]</span></b>
+                </div>
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: &quot;Helvetica Neue&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-bidi-font-family: &quot;Times New Roman&quot;;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US"> </span></b></div>
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US">[WebViewJavascriptBridge bridgeForWebView:(UIWebView/WebView*)webview webViewDelegate:(UIWebViewDelegate*)webViewDelegate handler:(WVJBHandler)handler]</span></b>
+                </div>
+                <div><span lang="EN-US" xml:lang="EN-US"> </span></div>
+            </td>
+            <td width="213" valign="top"
+                style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US">document.addEventListener('WebViewJavascriptBridgeReady', function onBridgeReady(event) { ... }, false)</span></b>
+                </div>
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: &quot;Helvetica Neue&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-bidi-font-family: &quot;Times New Roman&quot;;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US"> </span></b></div>
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US">bridge.init(function messageHandler(data, response) { ... })</span></b></div>
+                <div><span lang="EN-US" xml:lang="EN-US"> </span></div>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:2">
+            <td width="213" valign="top"
+                style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
+                <div><span
+                        style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">OC发送消息</span><span
+                        lang="EN-US" xml:lang="EN-US">to JS</span></div>
+            </td>
+            <td width="213" valign="top"
+                style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                <div><span
+                        style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">JS发送消息</span><span
+                        lang="EN-US" xml:lang="EN-US">to OC</span></div>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:3">
+            <td width="213" valign="top"
+                style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US">[bridge send:(id)data]</span></b></div>
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><span
+                        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><b><span lang="EN-US"
+                                                                                                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                                                                                                        xml:lang="EN-US">[bridge send:(id)data responseCallback:(WVJBResponseCallback)responseCallback]</span></b></span>
+                </div>
+                <div><span lang="EN-US" xml:lang="EN-US"> </span></div>
+            </td>
+            <td width="213" valign="top"
+                style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US">bridge.send("Hi there!")</span></b></div>
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US">bridge.send({ Foo:"Bar" })</span></b></div>
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><span
+                        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><b><span lang="EN-US"
+                                                                                                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                                                                                                        xml:lang="EN-US">bridge.send(data, function responseCallback(responseData) { ... })</span></b></span>
+                </div>
+                <div><span lang="EN-US" xml:lang="EN-US"> </span></div>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:4">
+            <td width="213" valign="top"
+                style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
+                <div><span
+                        style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">OC注册事件（先）</span>
+                </div>
+            </td>
+            <td width="213" valign="top"
+                style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                <div><span
+                        style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">JS调用事件（后）</span>
+                </div>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:5">
+            <td width="213" valign="top"
+                style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US">[bridge registerHandler:(NSString*)handlerName handler:(WVJBHandler)handler]</span></b>
+                </div>
+                <div><span lang="EN-US" xml:lang="EN-US"> </span></div>
+            </td>
+            <td width="213" valign="top"
+                style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan"><span lang="EN-US"
+                                                                                            style="font-size:10.0pt;font-family:Consolas;mso-fareast-font-family: &quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333; mso-font-kerning:0pt"
+                                                                                            xml:lang="EN-US">WebViewJavascriptBridge.callHandler("handlerName")</span>
+                </div>
+                <div><span lang="EN-US" xml:lang="EN-US"> </span></div>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:6">
+            <td width="213" valign="top"
+                style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
+                <div><span
+                        style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">OC调用事件（后）</span>
+                </div>
+            </td>
+            <td width="213" valign="top"
+                style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                <div><span
+                        style="font-family:宋体;mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font: minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">JS注册事件（先）</span>
+                </div>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:7;mso-yfti-lastrow:yes">
+            <td width="213" valign="top"
+                style="border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;">
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US">[bridge callHandler:(NSString*)handlerName data:(id)data]</span></b></div>
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US">[bridge callHandler:(NSString*)handlerName data:(id)data responseCallback:(WVJBResponseCallback)callback]</span></b>
+                </div>
+                <div><span lang="EN-US" xml:lang="EN-US"> </span></div>
+            </td>
+            <td width="213" valign="top"
+                style="border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+                        lang="EN-US"
+                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                        xml:lang="EN-US">bridge.registerHandler("handlerName", function(responseData) { ... })</span></b>
+                </div>
+                <div><span lang="EN-US" xml:lang="EN-US"> </span></div>
+            </td>
+        </tr>
+    </table>
+    <div><br/></div>
+    <div><b>三类API接口用于OC与JS之间交互</b>：初始化接口；发送消息接口，并且可以添加发送消息完成的回调函数；事件注册和调用接口，需要先在一端注册事件，另一端可以根据事件名称调用函数</div>
+    <div><br/></div>
+</div>
+<div>除了上述提到的外部方法：还有两个方法十分重要，<span style="font-size: 18px;"><b><span
+        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">JS部分最重要的内部方法： <b><span
+        style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Menlo;">_handleMessageFromObjC；OC部分重要的内部方法：</span>
+    <span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Menlo;"><b>flushMessageQueue</b></span></b></span></b></span>
+</div>
+<div><span style="font-size: 13px;"><span style="font-family: Menlo;"><span
+        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></span></span></div>
 <div><br/></div>
 <div><span style="font-size: 18px;"><b><span style="font-family: Menlo;">2、类结构图</span></b></span></div>
 <div><b><span style="font-size: 18px;"><span style="font-family: Menlo;"><br/></span></span></b></div>
@@ -98,243 +211,852 @@
 <div>WebViewjavascriptBridgeBase是通用类，用于处理从Native到JS的消息注入，消息队列处理和分发，JSON数据的序列化和反序列化，LOG输出；</div>
 <div><br/></div>
 <div><span style="font-size: 18px;"><b>3、源码分析</b></span></div>
-<div><img src="WebViewJavascriptBridge.resources/48A91349-6A4C-4FD2-8C8D-739DBC1F4CF1.png" height="1100" width="2551"/></div>
+<div><img src="WebViewJavascriptBridge.resources/48A91349-6A4C-4FD2-8C8D-739DBC1F4CF1.png" height="1100" width="2551"/>
+</div>
 <div><b><span style="font-size: 18px;">3.1 消息发送JS－》Native</span></b></div>
 <div><b><span style="font-size: 18px;"><br/></span></b></div>
 <div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">[bridge send:(id)data]</span></b></div>
+    <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US"
+                                                                                                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                                                                                                        xml:lang="EN-US">[bridge send:(id)data]</span></b>
+    </div>
 </div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">[bridge send:(id)data responseCallback:(WVJBResponseCallback)responseCallback]</span></b></div>
+<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US"
+                                                                                                    style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                                                                                                    xml:lang="EN-US">[bridge send:(id)data responseCallback:(WVJBResponseCallback)responseCallback]</span></b>
+</div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><span style="font-size: 13px;"><span style="font-family: Menlo;">这两个函数最后都是调用</span></span><span style="font-size: 13px;"><span style="font-family: Menlo;">_doSend({ data:data }, responseCallback)</span></span></div>
+<div><span style="font-size: 13px;"><span style="font-family: Menlo;">这两个函数最后都是调用</span></span><span
+        style="font-size: 13px;"><span
+        style="font-family: Menlo;">_doSend({ data:data }, responseCallback)</span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">function _doSend(message, responseCallback) {<br/>
-if (responseCallback) {<br/>
-var callbackId = 'cb_'+(uniqueId++)+'_'+new Date().getTime()<br/>
-responseCallbacks[callbackId] = responseCallback<br/>
-message['callbackId'] = callbackId<br/>
-}<br/>
-sendMessageQueue.push(message)<br/>
-messagingIframe.src = CUSTOM_PROTOCOL_SCHEME + '://' + QUEUE_HAS_MESSAGE</span></span></span></div>
-<div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
+<div>
+    <div style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(255, 255, 255);">
+        <span style="color: rgb(128, 0, 0); font-weight: bold;">function</span> _doSend<span
+            style="color: rgb(128, 128, 48);">(</span>message<span style="color: rgb(128, 128, 48);">,</span> responseCallback<span
+            style="color: rgb(128, 128, 48);">)</span> <span style="color: rgb(128, 0, 128);">{</span><br/>
+               <span style="color: rgb(128, 0, 0); font-weight: bold;">if</span> <span
+            style="color: rgb(128, 128, 48);">(</span>responseCallback<span
+            style="color: rgb(128, 128, 48);">)</span> <span style="color: rgb(128, 0, 128);">{</span><br/>
+                       <span style="color: rgb(128, 0, 0); font-weight: bold;">var</span> callbackId <span
+            style="color: rgb(128, 128, 48);">=</span> <span style="color: rgb(128, 0, 0);">'</span><span
+            style="color: rgb(0, 0, 230);">cb_</span><span style="color: rgb(128, 0, 0);">'</span><span
+            style="color: rgb(128, 128, 48);">+</span><span style="color: rgb(128, 128, 48);">(</span>uniqueId<span
+            style="color: rgb(128, 128, 48);">++</span><span style="color: rgb(128, 128, 48);">)</span><span
+            style="color: rgb(128, 128, 48);">+</span><span style="color: rgb(128, 0, 0);">'</span><span
+            style="color: rgb(0, 0, 230);">_</span><span style="color: rgb(128, 0, 0);">'</span><span
+            style="color: rgb(128, 128, 48);">+</span><span style="color: rgb(128, 0, 0); font-weight: bold;">new</span> <span
+            style="color: rgb(121, 121, 151);">Date</span><span style="color: rgb(128, 128, 48);">(</span><span
+            style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 128, 48);">.</span><span
+            style="color: rgb(128, 0, 0); font-weight: bold;">getTime</span><span
+            style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 128, 48);">)</span><br/>
+                       responseCallbacks<span style="color: rgb(128, 128, 48);">[</span>callbackId<span
+            style="color: rgb(128, 128, 48);">]</span> <span style="color: rgb(128, 128, 48);">=</span> responseCallback<br/>
+                      message<span style="color: rgb(128, 128, 48);">[</span><span
+            style="color: rgb(128, 0, 0);">'</span><span style="color: rgb(0, 0, 230);">callbackId</span><span
+            style="color: rgb(128, 0, 0);">'</span><span style="color: rgb(128, 128, 48);">]</span> <span
+            style="color: rgb(128, 128, 48);">=</span> callbackId<br/>
+              <span style="color: rgb(128, 0, 128);">}</span><br/>
+             sendMessageQueue<span style="color: rgb(128, 128, 48);">.</span>push<span
+            style="color: rgb(128, 128, 48);">(</span>message<span style="color: rgb(128, 128, 48);">)</span><br/>
+             messagingIframe<span style="color: rgb(128, 128, 48);">.</span>src <span style="color: rgb(128, 128, 48);">=</span> CUSTOM_PROTOCOL_SCHEME <span
+            style="color: rgb(128, 128, 48);">+</span> <span style="color: rgb(128, 0, 0);">'</span><span
+            style="color: rgb(0, 0, 230);">://</span><span style="color: rgb(128, 0, 0);">'</span> <span
+            style="color: rgb(128, 128, 48);">+</span> QUEUE_HAS_MESSAGE<br/>
+        <span style="color: rgb(128, 0, 128);">}</span><br/></div>
+</div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><font face="Menlo"><span style="font-size: 13px;">首先生成</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">callbackId，由不断加1的唯一需要和时间戳构成，如果有</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">responseCallback函数，使用</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;"><b><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">callbackId</span></b>作为索引，存入</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">responseCallbacks对象，等到从OC侧返回的信息中对应的</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">callbackId与当前</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">responseCallbacks中</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">callbackId相同时，调用回调函数</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">responseCallback；</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">sendMessageQueue是个消息数组，每次的新消息放入其中，</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">messagingIframe是iframe对象，当设置src产生一次请求，</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">在OC端的</span></span></span></div>
-<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">BOOL</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)webView:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">UIWebView</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)webView shouldStartLoadWithRequest:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSURLRequest</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)request navigationType:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">UIWebViewNavigationType</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)navigationType 会拦截请求内容</span></div>
+<div><font face="Menlo"><span style="font-size: 13px;">首先生成</span></font><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">callbackId，由不断加1的唯一需要和时间戳构成，如果有</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">responseCallback函数，使用</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;"><b><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">callbackId</span></b>作为索引，存入</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">responseCallbacks对象，等到从OC侧返回的信息中对应的</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">callbackId与当前</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">responseCallbacks中</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">callbackId相同时，调用回调函数</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">responseCallback；</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">sendMessageQueue是个消息数组，每次的新消息放入其中，</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">messagingIframe是iframe对象，当设置src产生一次请求，</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">在OC端的</span></span></span></div>
+<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">BOOL</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)webView:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">UIWebView</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)webView shouldStartLoadWithRequest:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSURLRequest</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)request navigationType:(</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">UIWebViewNavigationType</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)navigationType 会拦截请求内容</span></div>
 <div><br/></div>
-<div><br/></div>
-<div><br/></div>
-<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">BOOL</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)webView:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">UIWebView</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)webView shouldStartLoadWithRequest:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSURLRequest</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)request navigationType:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">UIWebViewNavigationType</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)navigationType {<br/>
-   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(webView !=</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_webView</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">) {</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">YES</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">; }<br/>
-   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSURL</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*url = [request</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">URL</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
-   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">__strong</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">WVJB_WEBVIEW_DELEGATE_TYPE</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* strongDelegate =</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_webViewDelegate</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
-   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">([</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">isCorrectProcotocolScheme</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:url]) {<br/>
-       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">([</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">isCorrectHost</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:url]) {<br/>
-<span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">           </span></span> <span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*messageQueueString = [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_evaluateJavascript</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">webViewJavascriptFetchQueyCommand</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]];<br/>
-            [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">flushMessageQueue</span></span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">:messageQueueString];</span><br/>
-        }</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
-            [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">logUnkownMessage</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:url];<br/>
+<div>代码：</div>
+<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">BOOL</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)webView:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">UIWebView</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)webView shouldStartLoadWithRequest:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSURLRequest</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)request navigationType:(</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">UIWebViewNavigationType</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)navigationType {<br/>
+   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(webView !=</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_webView</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">) {</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">YES</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">; }<br/>
+   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSURL</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*url = [request</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">URL</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
+   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">__strong</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">WVJB_WEBVIEW_DELEGATE_TYPE</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* strongDelegate =</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_webViewDelegate</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
+   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">([</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">isCorrectProcotocolScheme</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:url]) {<br/>
+       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">([</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">isCorrectHost</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:url]) {<br/>
+<span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">           </span></span> <span
+            style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*messageQueueString = [</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_evaluateJavascript</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:[</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">webViewJavascriptFetchQueyCommand</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]];<br/>
+            [</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">flushMessageQueue</span></span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><span
+            style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">:messageQueueString];</span><br/>
+        }</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
+            [</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">logUnkownMessage</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:url];<br/>
         }<br/>
-       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">NO</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
-    }</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(strongDelegate &amp;&amp; [strongDelegate</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">respondsToSelector</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">@selector</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(webView:shouldStartLoadWithRequest:navigationType:)]) {<br/>
-       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[strongDelegate</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">webView</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:webView</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">shouldStartLoadWithRequest</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:request</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">navigationType</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:navigationType];<br/>
-    }</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
-       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">YES</span><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">;<br/>
+       </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">NO</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
+    }</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(strongDelegate &amp;&amp; [strongDelegate</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">respondsToSelector</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">@selector</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(webView:shouldStartLoadWithRequest:navigationType:)]) {<br/>
+       </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[strongDelegate</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">webView</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:webView</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">shouldStartLoadWithRequest</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:request</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">navigationType</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:navigationType];<br/>
+    }</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
+       </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">YES</span><span
+            style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+            style="font-family: Menlo;">;<br/>
     }</span></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><font face="Menlo"><span style="font-size: 13px;">重点部分：执行注入</span></font><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_evaluateJavascript，</span></span></div>
-<div><span style="font-size: 13px;"><span style="font-family: Menlo;"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="color: rgb(52, 149, 175);">OC</span></span></span></span></div>
-<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">-(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)webViewJavascriptFetchQueyCommand {<br/>
-   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"WebViewJavascriptBridge._fetchQueue();"</span><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">;</span></span></span></div>
+<div><font face="Menlo"><span style="font-size: 13px;">重点部分：执行注入</span></font><span
+        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_evaluateJavascript，</span></span>
+</div>
+<div><span style="font-size: 13px;"><span style="font-family: Menlo;"><span
+        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="color: rgb(52, 149, 175);">OC</span></span></span></span>
+</div>
+<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">-(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)webViewJavascriptFetchQueyCommand {<br/>
+   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"WebViewJavascriptBridge._fetchQueue();"</span><span
+            style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+            style="font-family: Menlo;">;</span></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
-<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font-size: 13px;"><span style="font-family: Menlo;">JS</span></span></span></div>
-<div><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">function _fetchQueue() {<br/>
-var messageQueueString = JSON.stringify(sendMessageQueue)<br/>
-sendMessageQueue = []<br/>
-return messageQueueString</span></span></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">JS</span></span></span></div>
+<div><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">function _fetchQueue() {</span></span></span></div>
+<div><span style="font-size: 13px;"><span style="font-family: Menlo;">    var messageQueueString = JSON.stringify(sendMessageQueue)</span></span>
+</div>
+<div><span style="font-size: 13px;"><span style="font-family: Menlo;">    sendMessageQueue = []</span></span></div>
+<div><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">   return messageQueueString</span></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
-<div><font face="Menlo"><span style="font-size: 13px;">这个函数从JS的</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">sendMessageQueue消息队列获取内容返回，这个</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">sendMessageQueue是在之前的</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">_doSend函数中传入的消息内容，也就是</span></span></span><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*messageQueueString = [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_evaluateJavascript</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">webViewJavascriptFetchQueyCommand</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]];这句代码获得从JS侧拿到的数据内容，然后调用</span></span><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">flushMessageQueue</span></span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">:messageQueueString];对消息分发处理</span></span></div>
-<div><span style="font-size: 13px;"><span style="font-family: Menlo;"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></span></span></div>
-<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)flushMessageQueue:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)messageQueueString{<br/>
-   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">messages = [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_deserializeMessageJSON</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:messageQueueString];<br/>
-   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(![messages</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">isKindOfClass</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSArray</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">class</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]]) {<br/>
-       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSLog</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"WebViewJavascriptBridge: WARNING: Invalid %@ received: %@"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">, [messages</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">class</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">], messages);<br/>
-       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
+<div><font face="Menlo"><span style="font-size: 13px;">这个函数从JS的</span></font><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">sendMessageQueue消息队列获取内容返回，这个</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">sendMessageQueue是在之前的</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">_doSend函数中传入的消息内容，也就是</span></span></span><span
+        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*messageQueueString = [</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_evaluateJavascript</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:[</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">webViewJavascriptFetchQueyCommand</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]];这句代码获得从JS侧拿到的数据内容，然后调用</span></span><span
+        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">flushMessageQueue</span></span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><span
+        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">:messageQueueString];对消息分发处理</span></span>
+</div>
+<div><span style="font-size: 13px;"><span style="font-family: Menlo;"><span
+        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></span></span></div>
+<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)flushMessageQueue:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)messageQueueString{<br/>
+   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">messages = [</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_deserializeMessageJSON</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:messageQueueString];<br/>
+   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(![messages</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">isKindOfClass</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:[</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSArray</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">class</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]]) {<br/>
+       </span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSLog</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"WebViewJavascriptBridge: WARNING: Invalid %@ received: %@"</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">, [messages</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">class</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">], messages);<br/>
+       </span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">return</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
     }<br/>
-   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">for</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBMessage</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* message</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">in</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">messages) {<br/>
-       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(![message</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">isKindOfClass</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBMessage</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">class</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]]) {<br/>
-           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSLog</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"WebViewJavascriptBridge: WARNING: Invalid %@ received: %@"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">, [message</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">class</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">], message);<br/>
-           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">continue</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
+   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">for</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBMessage</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* message</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">in</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">messages) {<br/>
+       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(![message</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">isKindOfClass</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:[</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBMessage</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">class</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]]) {<br/>
+           </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSLog</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"WebViewJavascriptBridge: WARNING: Invalid %@ received: %@"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">, [message</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">class</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">], message);<br/>
+           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">continue</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
         }<br/>
-        [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_log</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"RCVD"</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">json</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:message];<br/>
+        [</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_log</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"RCVD"</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">json</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:message];<br/>
        <br/>
-       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* responseId = message[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"responseId"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
-       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(responseId) {<br/>
-           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBResponseCallback</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">responseCallback =</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_responseCallbacks</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[responseId];<br/>
-            responseCallback(message[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"responseData"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]);<br/>
-            [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">responseCallbacks</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">removeObjectForKey</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:responseId];<br/>
-        }</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
-           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBResponseCallback</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">responseCallback =</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">NULL</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
-<span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">           </span></span> <span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* callbackId = message[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"callbackId"</span></span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">];</span><br/>
-           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(callbackId) {<br/>
-                responseCallback = ^(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">responseData) {<br/>
-                   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(responseData ==</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">nil</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">) {<br/>
-                        responseData = [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSNull</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">null</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
+       </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* responseId = message[</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"responseId"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
+       </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(responseId) {<br/>
+           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBResponseCallback</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">responseCallback =</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_responseCallbacks</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[responseId];<br/>
+            responseCallback(message[</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"responseData"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]);<br/>
+            [</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">responseCallbacks</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">removeObjectForKey</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:responseId];<br/>
+        }</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
+           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBResponseCallback</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">responseCallback =</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">NULL</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
+<span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">           </span></span> <span
+            style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* callbackId = message[</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"callbackId"</span></span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><span
+            style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">];</span><br/>
+           </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(callbackId) {<br/>
+                responseCallback = ^(</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">responseData) {<br/>
+                   </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(responseData ==</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">nil</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">) {<br/>
+                        responseData = [</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSNull</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">null</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
                     }<br/>
                    <br/>
-                   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBMessage</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* msg = @{</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"responseId"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:callbackId,</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"responseData"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:responseData };<br/>
-           <span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">         [</span></span><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_queueMessage</span></span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">:msg];</span><br/>
+                   </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBMessage</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* msg = @{</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"responseId"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:callbackId,</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"responseData"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:responseData };<br/>
+           <span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">         [</span></span><span
+            style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_queueMessage</span></span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><span
+            style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">:msg];</span><br/>
                 };<br/>
-            }</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
-                responseCallback = ^(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">ignoreResponseData) {<br/>
-                   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">// Do nothing</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><br/>
+            }</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
+                responseCallback = ^(</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">ignoreResponseData) {<br/>
+                   </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">// Do nothing</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><br/>
                 };<br/>
             }<br/>
            <br/>
-           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBHandler</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">handler;<br/>
-           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(message[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"handlerName"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]) {<br/>
-                handler =</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">messageHandlers</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[message[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"handlerName"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]];<br/>
-            }</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
-                handler =</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">messageHandler</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
+           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBHandler</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">handler;<br/>
+           </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(message[</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"handlerName"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]) {<br/>
+                handler =</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">messageHandlers</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[message[</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"handlerName"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]];<br/>
+            }</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
+                handler =</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">messageHandler</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">;<br/>
             }<br/>
            <br/>
-           </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(!handler) {<br/>
-                [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSException</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">raise</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"WVJBNoHandlerException"</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">format</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"No handler for message from JS: %@"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">, message];<br/>
+           </span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(!handler) {<br/>
+                [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSException</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">raise</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"WVJBNoHandlerException"</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">format</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"No handler for message from JS: %@"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">, message];<br/>
             }<br/>
            <br/>
-            handler(message[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"data"</span><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">], responseCallback);<br/>
+            handler(message[</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"data"</span><span
+            style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+            style="font-family: Menlo;">], responseCallback);<br/>
         }<br/>
     }</span></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><font face="Menlo"><span style="font-size: 13px;"><b>这个是整个框架中OC侧重要的函数，</b>但是目前首先分析</span></font><span style="font-size: 18px;"><b>消息发送JS－》Native</b><span style="font-size: 13px;">涉及到的部分内容，返回的消息包含</span></span><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; line-height: normal; font-family: Menlo;"><span style="color: rgb(180, 38, 26);">callbackId</span>，数据拼接后调用</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_queueMessage</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:msg];发送回JS侧的数据改为</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">responseId为关键字key</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">，具体如下：</span></div>
+<div><font face="Menlo"><span style="font-size: 13px;"><b>这个是整个框架中OC侧重要的函数，</b>但是目前首先分析</span></font><span
+        style="font-size: 18px;"><b>消息发送JS－》Native</b><span style="font-size: 13px;">涉及到的部分内容，返回的消息包含</span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; font-family: Menlo;"><span
+        style="color: rgb(180, 38, 26);">callbackId</span>，数据拼接后调用</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_queueMessage</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:msg];发送回JS侧的数据改为</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">responseId为关键字key</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">，具体如下：</span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)_queueMessage:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBMessage</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)message {<br/>
-   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">startupMessageQueue</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">) {<br/>
-        [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">startupMessageQueue</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">addObject</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:message];<br/>
-    }</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
-        [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_dispatchMessage</span><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">:message];<br/>
+<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)_queueMessage:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBMessage</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)message {<br/>
+   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">startupMessageQueue</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">) {<br/>
+        [</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">startupMessageQueue</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">addObject</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:message];<br/>
+    }</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
+        [</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_dispatchMessage</span><span
+            style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+            style="font-family: Menlo;">:message];<br/>
     }</span></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; font-family: Menlo;"><span style="color: rgb(52, 149, 175);">startupMessageQueue</span>只有首次启动时有效，之后为nil，所以都是走</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_dispatchMessage</span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">:message];</span></span></span></div>
+<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; font-family: Menlo;"><span
+        style="color: rgb(52, 149, 175);">startupMessageQueue</span>只有首次启动时有效，之后为nil，所以都是走</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_dispatchMessage</span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">:message];</span></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)_dispatchMessage:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBMessage</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)message {<br/>
-   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*messageJSON = [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_serializeMessage</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:message];<br/>
-    [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_log</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"SEND"</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">json</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:messageJSON];<br/>
-    messageJSON = [messageJSON</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\"</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\\\"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
-    messageJSON = [messageJSON</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\""</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\\""</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
-    messageJSON = [messageJSON</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\'"</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\\'"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
-    messageJSON = [messageJSON</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\n"</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\n"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
-    messageJSON = [messageJSON</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\r"</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\r"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
-    messageJSON = [messageJSON</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\f"</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\f"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
-    messageJSON = [messageJSON</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\u2028"</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\u2028"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
-    messageJSON = [messageJSON</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\u2029"</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\u2029"</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
+<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)_dispatchMessage:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBMessage</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)message {<br/>
+   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*messageJSON = [</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_serializeMessage</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:message];<br/>
+    [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_log</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"SEND"</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">json</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:messageJSON];<br/>
+    messageJSON = [messageJSON</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\"</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\\\"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
+    messageJSON = [messageJSON</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\""</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\\""</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
+    messageJSON = [messageJSON</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\'"</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\\'"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
+    messageJSON = [messageJSON</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\n"</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\n"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
+    messageJSON = [messageJSON</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\r"</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\r"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
+    messageJSON = [messageJSON</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\f"</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\f"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
+    messageJSON = [messageJSON</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\u2028"</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\u2028"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
+    messageJSON = [messageJSON</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringByReplacingOccurrencesOfString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\u2029"</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">withString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"\\u2029"</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];<br/>
    <br/>
-<span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">   </span></span> <span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* javascriptCommand = [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringWithFormat</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"WebViewJavascriptBridge._handleMessageFromObjC('%@');"</span></span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">, messageJSON];</span><br/>
-   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">([[</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSThread</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">currentThread</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">isMainThread</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]) {<br/>
-        [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_evaluateJavascript</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:javascriptCommand];<br/>
+<span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">   </span></span> <span
+            style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">* javascriptCommand = [</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">stringWithFormat</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #b4261a">@"WebViewJavascriptBridge._handleMessageFromObjC('%@');"</span></span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures"><span
+            style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">, messageJSON];</span><br/>
+   </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">if</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">([[</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSThread</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">currentThread</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">isMainThread</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">]) {<br/>
+        [</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_evaluateJavascript</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:javascriptCommand];<br/>
 <br/>
-    }</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
-       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">dispatch_sync</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">dispatch_get_main_queue</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(), ^{<br/>
-            [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_evaluateJavascript</span><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">:javascriptCommand];<br/>
+    }</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">else</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">{<br/>
+       </span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">dispatch_sync</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">dispatch_get_main_queue</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">(), ^{<br/>
+            [</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_evaluateJavascript</span><span
+            style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+            style="font-family: Menlo;">:javascriptCommand];<br/>
         });<br/>
     }</span></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
-<div><font face="Menlo"><span style="font-size: 13px;">此函数对message特殊字符进行转义处理，然后执行JS注入语句，</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; line-height: normal; font-family: Menlo;"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="color: rgb(180, 38, 26);">WebViewJavascriptBridge._handleMessageFromObjC</span></span>执行到JS侧</span></div>
+<div><font face="Menlo"><span style="font-size: 13px;">此函数对message特殊字符进行转义处理，然后执行JS注入语句，</span></font><span
+        style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; font-family: Menlo;"><span
+        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="color: rgb(180, 38, 26);">WebViewJavascriptBridge._handleMessageFromObjC</span></span>执行到JS侧</span>
+</div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
 <div><font face="Menlo"><span style="font-size: 13px;"><b>这个是整个框架中JS侧重要的函数</b>，用于处理从OC侧返回的消息</span></font></div>
-<div><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">function _dispatchMessageFromObjC(messageJSON) {<br/>
-setTimeout(function _timeoutDispatchMessageFromObjC() {<br/>
-var message = JSON.parse(messageJSON)<br/>
-var messageHandler<br/>
-var responseCallback<br/>
-<br/>
-<span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">if (message.responseId)</span> {<br/>
-<span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">responseCallback = responseCallbacks[message.responseId]<br/>
-if (!responseCallback) { return; }<br/>
-responseCallback(message.responseData)<br/>
-delete responseCallbacks[message.responseId]<br/></span>} else {<br/>
-if (message.callbackId) {<br/>
-var callbackResponseId = message.callbackId<br/>
-responseCallback = function(responseData) {<br/>
-_doSend({ responseId:callbackResponseId, responseData:responseData })<br/>
-}<br/>
-}<br/>
-<br/>
-var handler = WebViewJavascriptBridge._messageHandler<br/>
-if (message.handlerName) {<br/>
-handler = messageHandlers[message.handlerName]<br/>
-}<br/>
-<br/>
-try {<br/>
-handler(message.data, responseCallback)<br/>
-} catch(exception) {<br/>
-if (typeof console != 'undefined') {<br/>
-console.log("WebViewJavascriptBridge: WARNING: javascript handler threw.", message, exception)<br/>
-}<br/>
-}<br/>
-}<br/>
-})</span></span></span></div>
-<div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
+<div>
+    <div style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(255, 255, 255);">
+        <span style="color: rgb(128, 0, 0); font-weight: bold;">function</span> _dispatchMessageFromObjC<span
+            style="color: rgb(128, 128, 48);">(</span>messageJSON<span style="color: rgb(128, 128, 48);">)</span> <span
+            style="color: rgb(128, 0, 128);">{</span><br/>
+                <span style="color: rgb(128, 0, 0); font-weight: bold;">setTimeout</span><span
+            style="color: rgb(128, 128, 48);">(</span><span
+            style="color: rgb(128, 0, 0); font-weight: bold;">function</span> _timeoutDispatchMessageFromObjC<span
+            style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 128, 48);">)</span> <span
+            style="color: rgb(128, 0, 128);">{</span><br/>
+                    <span style="color: rgb(128, 0, 0); font-weight: bold;">var</span> message <span
+            style="color: rgb(128, 128, 48);">=</span> JSON<span style="color: rgb(128, 128, 48);">.</span><span
+            style="color: rgb(128, 0, 0); font-weight: bold;">parse</span><span
+            style="color: rgb(128, 128, 48);">(</span>messageJSON<span style="color: rgb(128, 128, 48);">)</span><br/>
+                    <span style="color: rgb(128, 0, 0); font-weight: bold;">var</span> messageHandler<br/>
+                    <span style="color: rgb(128, 0, 0); font-weight: bold;">var</span> responseCallback<br/>
+        <br/>
+                    <span style="color: rgb(128, 0, 0); font-weight: bold;">if</span> <span
+            style="color: rgb(128, 128, 48);">(</span>message<span
+            style="color: rgb(128, 128, 48);">.</span>responseId<span style="color: rgb(128, 128, 48);">)</span> <span
+            style="color: rgb(128, 0, 128);">{</span><br/>
+                        responseCallback <span style="color: rgb(128, 128, 48);">=</span> responseCallbacks<span
+            style="color: rgb(128, 128, 48);">[</span>message<span
+            style="color: rgb(128, 128, 48);">.</span>responseId<span style="color: rgb(128, 128, 48);">]</span><br/>
+                        <span style="color: rgb(128, 0, 0); font-weight: bold;">if</span> <span
+            style="color: rgb(128, 128, 48);">(</span><span
+            style="color: rgb(128, 128, 48);">!</span>responseCallback<span
+            style="color: rgb(128, 128, 48);">)</span> <span style="color: rgb(128, 0, 128);">{</span> <span
+            style="color: rgb(128, 0, 0); font-weight: bold;">return</span><span
+            style="color: rgb(128, 0, 128);">;</span> <span style="color: rgb(128, 0, 128);">}</span><br/>
+                        responseCallback<span style="color: rgb(128, 128, 48);">(</span>message<span
+            style="color: rgb(128, 128, 48);">.</span>responseData<span style="color: rgb(128, 128, 48);">)</span><br/>
+                        <span style="color: rgb(128, 0, 0); font-weight: bold;">delete</span> responseCallbacks<span
+            style="color: rgb(128, 128, 48);">[</span>message<span
+            style="color: rgb(128, 128, 48);">.</span>responseId<span style="color: rgb(128, 128, 48);">]</span><br/>
+                    <span style="color: rgb(128, 0, 128);">}</span> <span
+            style="color: rgb(128, 0, 0); font-weight: bold;">else</span> <span
+            style="color: rgb(128, 0, 128);">{</span><br/>
+                        <span style="color: rgb(128, 0, 0); font-weight: bold;">if</span> <span
+            style="color: rgb(128, 128, 48);">(</span>message<span
+            style="color: rgb(128, 128, 48);">.</span>callbackId<span style="color: rgb(128, 128, 48);">)</span> <span
+            style="color: rgb(128, 0, 128);">{</span><br/>
+                            <span style="color: rgb(128, 0, 0); font-weight: bold;">var</span> callbackResponseId <span
+            style="color: rgb(128, 128, 48);">=</span> message<span style="color: rgb(128, 128, 48);">.</span>callbackId<br/>
+                            responseCallback <span style="color: rgb(128, 128, 48);">=</span> <span
+            style="color: rgb(128, 0, 0); font-weight: bold;">function</span><span
+            style="color: rgb(128, 128, 48);">(</span>responseData<span style="color: rgb(128, 128, 48);">)</span> <span
+            style="color: rgb(128, 0, 128);">{</span><br/>
+                                _doSend<span style="color: rgb(128, 128, 48);">(</span><span
+            style="color: rgb(128, 0, 128);">{</span> responseId<span style="color: rgb(128, 0, 128);">:</span>callbackResponseId<span
+            style="color: rgb(128, 128, 48);">,</span> responseData<span style="color: rgb(128, 0, 128);">:</span>responseData <span
+            style="color: rgb(128, 0, 128);">}</span><span style="color: rgb(128, 128, 48);">)</span><br/>
+                            <span style="color: rgb(128, 0, 128);">}</span><br/>
+                        <span style="color: rgb(128, 0, 128);">}</span><br/>
+        <br/>
+                        <span style="color: rgb(128, 0, 0); font-weight: bold;">var</span> handler <span
+            style="color: rgb(128, 128, 48);">=</span> WebViewJavascriptBridge<span
+            style="color: rgb(128, 128, 48);">.</span>_messageHandler<br/>
+                        <span style="color: rgb(128, 0, 0); font-weight: bold;">if</span> <span
+            style="color: rgb(128, 128, 48);">(</span>message<span style="color: rgb(128, 128, 48);">.</span>handlerName<span
+            style="color: rgb(128, 128, 48);">)</span> <span style="color: rgb(128, 0, 128);">{</span><br/>
+                            handler <span style="color: rgb(128, 128, 48);">=</span> messageHandlers<span
+            style="color: rgb(128, 128, 48);">[</span>message<span style="color: rgb(128, 128, 48);">.</span>handlerName<span
+            style="color: rgb(128, 128, 48);">]</span><br/>
+                        <span style="color: rgb(128, 0, 128);">}</span><br/>
+        <br/>
+                        <span style="color: rgb(128, 0, 0); font-weight: bold;">try</span> <span
+            style="color: rgb(128, 0, 128);">{</span><br/>
+                            handler<span style="color: rgb(128, 128, 48);">(</span>message<span
+            style="color: rgb(128, 128, 48);">.</span>data<span style="color: rgb(128, 128, 48);">,</span> responseCallback<span
+            style="color: rgb(128, 128, 48);">)</span><br/>
+                        <span style="color: rgb(128, 0, 128);">}</span> <span
+            style="color: rgb(128, 0, 0); font-weight: bold;">catch</span><span
+            style="color: rgb(128, 128, 48);">(</span>exception<span style="color: rgb(128, 128, 48);">)</span> <span
+            style="color: rgb(128, 0, 128);">{</span><br/>
+                            <span style="color: rgb(128, 0, 0); font-weight: bold;">if</span> <span
+            style="color: rgb(128, 128, 48);">(</span><span
+            style="color: rgb(128, 0, 0); font-weight: bold;">typeof</span> console <span
+            style="color: rgb(128, 128, 48);">!=</span> <span style="color: rgb(128, 0, 0);">'</span><span
+            style="color: rgb(0, 0, 230);">undefined</span><span style="color: rgb(128, 0, 0);">'</span><span
+            style="color: rgb(128, 128, 48);">)</span> <span style="color: rgb(128, 0, 128);">{</span><br/>
+                                console<span style="color: rgb(128, 128, 48);">.</span><span
+            style="color: rgb(128, 0, 0); font-weight: bold;">log</span><span style="color: rgb(128, 128, 48);">(</span><span
+            style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(0, 0, 230);">WebViewJavascriptBridge: WARNING: javascript handler threw.</span><span
+            style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(128, 128, 48);">,</span> message<span
+            style="color: rgb(128, 128, 48);">,</span> exception<span style="color: rgb(128, 128, 48);">)</span><br/>
+                            <span style="color: rgb(128, 0, 128);">}</span><br/>
+                        <span style="color: rgb(128, 0, 128);">}</span><br/>
+                    <span style="color: rgb(128, 0, 128);">}</span><br/>
+                <span style="color: rgb(128, 0, 128);">}</span><span style="color: rgb(128, 128, 48);">)</span><br/>
+            <span style="color: rgb(128, 0, 128);">}</span><br/></div>
+</div>
 <div><font color="#3495AF" face="Menlo"><span style="font-size: 13px;">执行JS侧本地回调函数</span></font></div>
-<div><span style="font-size: 13px;"><span style="font-family: Menlo;"><span style="color: rgb(52, 149, 175);"><br/></span></span></span></div>
-<div><span style="font-size: 13px;"><span style="font-family: Menlo;"><span style="color: rgb(52, 149, 175);"><br/></span></span></span></div>
+<div><span style="font-size: 13px;"><span style="font-family: Menlo;"><span
+        style="color: rgb(52, 149, 175);"><br/></span></span></span></div>
+<div><span style="font-size: 13px;"><span style="font-family: Menlo;"><span
+        style="color: rgb(52, 149, 175);"><br/></span></span></span></div>
 <div><b><span style="font-size: 18px;"><span style="font-family: Menlo;">3.2 消息发送 OC--》JS</span></span></b></div>
 <div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">bridge.send("Hi there!")</span></b></div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">bridge.send({ Foo:"Bar" })</span></b></div>
+    <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US"
+                                                                                                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                                                                                                        xml:lang="EN-US">bridge.send("Hi there!")</span></b>
+    </div>
+    <div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span lang="EN-US"
+                                                                                                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                                                                                                        xml:lang="EN-US">bridge.send({ Foo:"Bar" })</span></b>
+    </div>
 </div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><b><span lang="EN-US" style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt" xml:lang="EN-US">bridge.send(data, function responseCallback(responseData) { ... })</span></b></span></div>
-<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span style="font-size: 10pt;"><span style="font-family: Consolas;"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="color: rgb(51, 51, 51);"><br/></span></span></span></span></b></div>
+<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><span
+        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><b><span lang="EN-US"
+                                                                                        style="font-size:10.0pt;font-family: Consolas;mso-bidi-font-family:Courier;color:#333333;mso-font-kerning:0pt"
+                                                                                        xml:lang="EN-US">bridge.send(data, function responseCallback(responseData) { ... })</span></b></span>
+</div>
+<div align="left" style="text-align:left;mso-pagination:widow-orphan; mso-outline-level:5"><b><span
+        style="font-size: 10pt;"><span style="font-family: Consolas;"><span
+        style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span
+        style="color: rgb(51, 51, 51);"><br/></span></span></span></span></b></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">调用</span></span></div>
-<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">    [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base </span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">sendData</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:data</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">responseCallback</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:responseCallback</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">handlerName</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">nil</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];</span></div>
+<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">    [</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base </span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">sendData</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:data</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">responseCallback</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:responseCallback</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">handlerName</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">nil</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">];</span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><font face="Menlo"><span style="font-size: 13px;">执行</span></font> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_queueMessage</span></div>
+<div><font face="Menlo"><span style="font-size: 13px;">执行</span></font> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_queueMessage</span>
+</div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
 <div><b><span style="font-size: 18px;"><span style="font-family: Menlo;">3.3 OC注册事件和JS调用</span></span></b></div>
 <div><br/></div>
 <div><b><span style="font-size: 13px;"><span style="font-family: Menlo;">OC侧注册</span></span></b></div>
-<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)registerHandler:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)handlerName handler:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBHandler</span><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">)handler {</span></span></span></div>
-<div><span style="font-family: Menlo;"><span style="font-size: 13px;">    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">messageHandlers</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[handlerName] = [handler</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">copy</span><span style="font-style: normal; font-variant: normal; font-weight: normal;">];</span></span></span></div>
+<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)registerHandler:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)handlerName handler:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBHandler</span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">)handler {</span></span></span></div>
+<div><span style="font-family: Menlo;"><span style="font-size: 13px;">    <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">.</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">messageHandlers</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">[handlerName] = [handler</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">copy</span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;">];</span></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
 <div><b><span style="font-size: 13px;"><span style="font-family: Menlo;">JS调用</span></span></b></div>
-<div><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">function callHandler(handlerName, data, responseCallback) {<br/>
-_doSend({ handlerName:handlerName, data:data }, responseCallback)</span></span></span></div>
+<div><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">function callHandler(handlerName, data, responseCallback) {</span></span></span>
+</div>
+<div><span style="font-size: 13px;"><span style="font-family: Menlo;">     _doSend({ handlerName:handlerName, data:data }, responseCallback)</span></span>
+</div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><font face="Menlo"><span style="font-size: 13px;">加入</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">handlerName和data数据传给OC侧，JS侧记录</span></span></span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">responseCallback，最后也会走到</span></span></span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)flushMessageQueue:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)messageQueueString函数中，由于既没有callbackId也没有responseId，所以只处理</span><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">handlerName及相关数据，最后走到 </span></span></span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)flushMessageQueue:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)messageQueueString解析，OC侧执行之前注册的</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">handler并传入data数据</span></div>
+<div><font face="Menlo"><span style="font-size: 13px;">加入</span></font><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">handlerName和data数据传给OC侧，JS侧记录</span></span></span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">responseCallback，最后也会走到</span></span></span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)flushMessageQueue:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)messageQueueString函数中，由于既没有callbackId也没有responseId，所以只处理</span><span
+        style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">handlerName及相关数据，最后走到 </span></span></span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)flushMessageQueue:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)messageQueueString解析，OC侧执行之前注册的</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">handler并传入data数据</span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
 <div><b><span style="font-size: 18px;"><span style="font-family: Menlo;">3.4 JS注册事件和OC调用</span></span></b></div>
 <div><b><span style="font-family: Menlo;"><br/></span></b></div>
 <div><b><span style="font-family: Menlo;">JS注册</span></b></div>
-<div><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">function registerHandler(handlerName, handler) {<br/>
-messageHandlers[handlerName] = handler</span></span></span></div>
+<div><span style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+        style="font-family: Menlo;">function registerHandler(handlerName, handler) {</span></span></span></div>
+<div><span style="font-size: 13px;"><span style="font-family: Menlo;">     messageHandlers[handlerName] = handler</span></span>
+</div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
 <div><font face="Menlo"><span style="font-size: 13px;">本地记录</span></font></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
 <div><b><span style="font-size: 13px;"><span style="font-family: Menlo;">OC调用</span></span></b></div>
-<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)callHandler:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)handlerName data:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)data {<br/>
-    [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">callHandler</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:handlerName</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">data</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:data</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">responseCallback</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">nil</span><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">];</span></span></span></div>
+<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)callHandler:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)handlerName data:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)data {<br/>
+    [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">self</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">callHandler</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:handlerName</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">data</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:data</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">responseCallback</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">nil</span><span
+            style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+            style="font-family: Menlo;">];</span></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)callHandler:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)handlerName data:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)data responseCallback:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBResponseCallback</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)responseCallback {<br/>
-    [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">sendData</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:data</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">responseCallback</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:responseCallback</span> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">handlerName</span><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;"><span style="font-size: 13px;"><span style="font-family: Menlo;">:handlerName];</span></span></span></div>
+<div><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)callHandler:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)handlerName data:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)data responseCallback:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBResponseCallback</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)responseCallback {<br/>
+    [</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">_base</span>
+    <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">sendData</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:data</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">responseCallback</span><span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">:responseCallback</span> <span
+            style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">handlerName</span><span
+            style="font-style: normal; font-variant: normal; font-weight: normal;"><span style="font-size: 13px;"><span
+            style="font-family: Menlo;">:handlerName];</span></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;">}</span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-<div><font face="Menlo"><span style="font-size: 13px;">handlerName和data  在</span></font> <span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)sendData:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)data responseCallback:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBResponseCallback</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)responseCallback handlerName:(</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span><span style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)handlerName中处理</span></div>
+<div><font face="Menlo"><span style="font-size: 13px;">handlerName和data  在</span></font> <span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">- (</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">void</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)sendData:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #0433ff">id</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)data responseCallback:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">WVJBResponseCallback</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">)responseCallback handlerName:(</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #3495af">NSString</span><span
+        style="font: 13.0px Menlo; font-variant-ligatures: no-common-ligatures">*)handlerName中处理</span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
 <div><span style="font-size: 18px;"><b><span style="font-family: Menlo;">4 、总结</span></b></span></div>
 <div><b><span style="font-size: 18px;"><span style="font-family: Menlo;"><br/></span></span></b></div>
 <div>1、与其它框架相比，此框架没有采用url拦截解析参数方式，而是多次JS注入参数获取，API接口暴露的操作在底层需要多次OC与JS之间交互完成</div>
-<div>2、</div>
+<div>2、WKwebview部分没有使用新的delgate方法，而是沿用iframe方式，个人觉得采用新接口可能效率更高</div>
 <div>
-<div><br/></div>
-<div><br/></div>
+    <div><br/></div>
+    <div><br/></div>
 </div>
 <div><br/></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
 <div><span style="font-size: 13px;"><span style="font-family: Menlo;"><br/></span></span></div>
-</body></html>
+    <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/kingnight/jinkai.github.com">Jinkai.GitHub.com</a> is maintained by <a
+                href="https://github.com/kingnight">kingnight</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a
+                href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a
+                href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+    </footer>
+
+</section>
+
+
+</body>
+</html>
